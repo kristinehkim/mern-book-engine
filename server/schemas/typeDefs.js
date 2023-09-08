@@ -1,3 +1,5 @@
+// typeDefs is where you are defining all the properties that you want to be able through graphQL
+// example: defining instructions
 const typeDefs = `
 type User {
     _id: ID!
@@ -27,7 +29,7 @@ type Query {
 
 input BookInput {
     authors: [String]
-    description: String!
+    description: String
     title: String!
     bookId: String!
     image: String
@@ -41,3 +43,8 @@ type Mutation {
     removeBook(bookId: String!): User
 }
 `
+// anything that is put in type is the available data that can be returned
+// input - rather than defining every parameter individually, we can create an input type for it so that we define it once and we always know what all the inputs will be
+// all the inputs passed under BookInput will be passed through the bookData parameter of saveBook line 42
+// ! are for if you always want to return it to the UI - no matter what data is graphed or manipulated from here, you will always expect to receive this specific piece of information
+// the purpose of graphQL is to manipulate data in the database and also send back data in a much less demanding way for the backend (you don't have to declare a bunch of routes) 

@@ -64,6 +64,7 @@ const resolvers = {
                 return book;
             }
             throw AuthenticationError;
-        }
-    }
-}
+        },
+    },
+};
+module.exports = resolvers;

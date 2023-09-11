@@ -43,6 +43,7 @@ type Mutation {
     removeBook(bookId: String!): User
 }
 `
+module.exports = typeDefs;
 // anything that is put in type is the available data that can be returned
 // input - rather than defining every parameter individually, we can create an input type for it so that we define it once and we always know what all the inputs will be
 // all the inputs passed under BookInput will be passed through the bookData parameter of saveBook line 42
